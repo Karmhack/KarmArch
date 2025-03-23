@@ -1,1 +1,1 @@
-post_install.sh : Script to setup up a fresh Arch install
+- post_install.sh : Script to setup up a fresh Arch install
