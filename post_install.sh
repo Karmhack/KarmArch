@@ -20,9 +20,15 @@ install_packages() {
         foomatic-db-nonfree foomatic-db-nonfree-ppds foomatic-db-ppds \
         gutenprint libcups vlc nmap git python-pip timeshift bluez zip unzip \
         base-devel make flatpak openvpn touchegg libreoffice-still chromium \
-        avahi nss-mdns nano
+        avahi nss-mdns nano xorg-xwayland
 }
 
+# Function to uninstall packages
+uninstall_packages() {
+    echo "uninstalling packages..."
+    sudo pacman -Rnsdd --noconfirm \
+    xdg-desktop-portal-gnome
+}
 
 
 # Function to configure printer services
@@ -141,7 +147,6 @@ desktop-cube@schneegans.github.com
 ip-finder@lujun9972
 lan-ip-address@lujun9972
 transparent-top-bar-adjustable@aleph168
-x11-gestures@joseexposito.github.com
 EOL
 }
 
@@ -197,6 +202,7 @@ setup_fastfetch() {
 # Execution of all functions
 echo "Starting installation script..."
 install_packages
+uninstall_packages
 configure_printers
 setup_touchegg
 install_flatpak_apps
