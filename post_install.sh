@@ -23,12 +23,6 @@ install_packages() {
         avahi nss-mdns nano xorg-xwayland
 }
 
-# Function to uninstall packages
-uninstall_packages() {
-    echo "uninstalling packages..."
-    sudo pacman -Rnsdd --noconfirm \
-    xdg-desktop-portal-gnome
-}
 
 
 # Function to configure printer services
@@ -202,7 +196,6 @@ setup_fastfetch() {
 # Execution of all functions
 echo "Starting installation script..."
 install_packages
-uninstall_packages
 configure_printers
 setup_touchegg
 install_flatpak_apps
